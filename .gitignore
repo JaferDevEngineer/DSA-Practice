@@ -1,0 +1,9 @@
+*.class
+*.log
+*.tmp
+*.swp
+*.iml
+.DS_Store
+.project
+.classpath
+.settings/
