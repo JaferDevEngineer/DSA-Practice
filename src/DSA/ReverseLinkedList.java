@@ -10,7 +10,7 @@ public class ReverseLinkedList {
 	private static ListNode reverseLinkedList(ListNode list) {
 		ListNode reversedList = null;
 		while(list!= null) {
-			ListNode temp = reversedList; // 2-> 1-> null
+			 ListNode temp = reversedList; // 2-> 1-> null
 			 reversedList = new ListNode(list.val); //2 
 			 reversedList.next = temp;// 2-> 1
 			
@@ -20,7 +20,7 @@ public class ReverseLinkedList {
 	}
 
 	public String reverseLinkedNodeList(ListNode listNode) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 }
