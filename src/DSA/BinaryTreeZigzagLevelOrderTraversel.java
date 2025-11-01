@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 public class BinaryTreeZigzagLevelOrderTraversel {
 	public static void main(String[] args) {
-//		System.out.println(new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(
-//				new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)))));
+		System.out.println(new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(
+				new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)))));
 //		System.out.println(
 //				new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(new TreeNode(1)));
 //		System.out.println(new BinaryTreeZigzagLevelOrderTraversel()
@@ -20,9 +20,9 @@ public class BinaryTreeZigzagLevelOrderTraversel {
 //		System.out.println(new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(
 //				new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3))));
 
-		TreeNode root = new TreeNode(0, new TreeNode(2, new TreeNode(1, new TreeNode(5), new TreeNode(1)), null),
-				new TreeNode(4, new TreeNode(3, new TreeNode(6), null), new TreeNode(-1, new TreeNode(8), null)));
-		System.out.println(new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(root));
+//		TreeNode root = new TreeNode(0, new TreeNode(2, new TreeNode(1, new TreeNode(5), new TreeNode(1)), null),
+//				new TreeNode(4, new TreeNode(3, new TreeNode(6), null), new TreeNode(-1, new TreeNode(8), null)));
+//		System.out.println(new BinaryTreeZigzagLevelOrderTraversel().binaryTreeZigzagLevelOrderTraversel(root));
 	}
 
 	private List<List<Integer>> binaryTreeZigzagLevelOrderTraversel(TreeNode treeNode) {

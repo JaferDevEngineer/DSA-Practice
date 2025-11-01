@@ -9,8 +9,10 @@ public class FindKthElementInBST {
 	public static void main(String[] args) {
 		
 //		System.out.println(new FindKthElementInBST().findKthElementInBST(new TreeNode(3,new TreeNode(1,new TreeNode(2),new TreeNode()),new TreeNode(4))));
-		System.out.println(new FindKthElementInBST().kthSmallest(new TreeNode(3,new TreeNode(1,new TreeNode(2),new TreeNode()),new TreeNode(4)),1));
+		System.out.println();
+		TreeNode tree= new TreeNode(3,new TreeNode(1,null,new TreeNode(2)),new TreeNode(4));
 		
+		System.out.println(new FindKthElementInBST().kthSmallestV2(tree,1));
 	}
 	public int kthSmallest(TreeNode root, int k) {
 	    List<Integer> inorder = new ArrayList<>();
@@ -59,4 +61,30 @@ public class FindKthElementInBST {
 			validate(node.right,arr);
 		
 	}
+	
+	
+	
+	
+	
+	 public int kthSmallestV2(TreeNode root, int k) {
+		 List<Integer> list = new ArrayList<>();
+		 inOrderTraversal(root,list);
+		return list.get(k-1);
+	        
+	    }
+	private void inOrderTraversal(TreeNode root, List<Integer> list) {
+		if(root == null) return;
+		
+		inOrderTraversal(root.left, list);
+		list.add(root.val);
+		inOrderTraversal(root.right, list);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }

@@ -6,9 +6,13 @@ import java.util.List;
 public class SpiralOrder {
 
 	public static void main(String[] args) {
-		System.out.println(new SpiralOrder().spiralOrderV2(new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }
-
-		}));
+//		System.out.println(new SpiralOrder().spiralOrderV3(new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }}));
+		System.out.println(new SpiralOrder().spiralOrderV3(
+				new int[][] 
+						{
+					{1, 2, 3,4},
+					{5, 6, 7,8},
+					{9,10,11,12}})); //[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 
 //		System.out.println(new SpiralOrder().spiralOrder(new int[][] { 
 //			{ 1, 2, 3, 4 }, 
@@ -29,14 +33,14 @@ public class SpiralOrder {
 //			{ 4, 0, -1 }
 //			
 //			}));
-		System.out.println(new SpiralOrder().spiralOrderV2(new int[][] {
-		{ 1,  2,  3,  4 }, 
-		{ 5,  6,  7,  8 }, 
-		{ 9,  10, 11, 12 }, 
-		{ 13, 14, 15, 16 }, 
-		{ 17, 18, 19, 20 }, 
-		{ 21, 22, 23, 24 },
-		}));
+//		System.out.println(new SpiralOrder().spiralOrderV3(new int[][] {
+//		{ 1,  2,  3,  4 }, 
+//		{ 5,  6,  7,  8 }, 
+//		{ 9,  10, 11, 12 }, 
+//		{ 13, 14, 15, 16 }, 
+//		{ 17, 18, 19, 20 }, 
+//		{ 21, 22, 23, 24 },
+//		}));
 		// [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 
 		// [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16],[17,18,19,20],[21,22,23,24]]
@@ -116,4 +120,78 @@ public class SpiralOrder {
 
 		return list;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	{ 1, 2, 3 }, 
+//	{ 4, 5, 6 }, 
+//	{ 7, 8, 9 }
+
+	
+//	[[1,2,3,4],
+//	[5,6,7,8],
+//	[9,10,11,12]]
+	
+	public List<Integer> spiralOrderV3(int[][] nums){
+		List<Integer> list = new ArrayList<>();
+		
+		int rows = nums.length,column = nums[0].length, top = 0,bottom = rows -1 ,left = 0,right = column -1;
+		
+		
+		while(top <= bottom && left <= right) {
+		
+			for(int i =left;i<=right;i++) {
+				list.add(nums[top][i]);
+			}
+			top++;
+			
+			for(int i = top;i <= bottom;i++) {
+				list.add(nums[i][right]);
+			}
+			right--;
+			
+			if(top<=bottom)
+			for(int i = right;i >= left;i--) {
+				list.add(nums[bottom][i]);
+			}
+			bottom--;
+			
+			if(left<=right)
+			for(int i = bottom; i >= top;i--) {
+				list.add(nums[i][left]);
+			}
+			left++;
+			
+//			break;
+		}
+		
+		return list;
+		
+	}
+	
+
 }

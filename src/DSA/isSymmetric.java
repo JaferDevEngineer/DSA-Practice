@@ -28,4 +28,34 @@ public class isSymmetric {
 		if(left.val != right.val) return false;
 		return isMirror(left.left, right.right) && isMirror(left.right, right.left);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public boolean isSymmetricV2(TreeNode tree) {
+			if(tree == null) return true;
+			return isMirrorV2(tree.left,tree.right);
+		
+	}
+
+	private boolean isMirrorV2(TreeNode left, TreeNode right) {
+		if(left == null && right ==null ) return true;
+		if(left == null || right == null) return false;
+		if(left.val != right.val) return false;
+		return isMirrorV2(left.left, left.right) && isMirrorV2(right.left, right.left);
+	}
 }

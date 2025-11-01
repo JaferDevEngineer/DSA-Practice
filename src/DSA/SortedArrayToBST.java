@@ -1,11 +1,7 @@
 package DSA;
 
 public class SortedArrayToBST {
-	public static void main(String[] args) {
-		
-		System.out.println(new SortedArrayToBST().sortedArrayToBSTV2(new int[] {-10, -3, 0, 5, 9}));
-//		System.out.println(0+(1-0)/2);
-	}
+	
 	 public TreeNode sortedArrayToBST(int[] nums) {
 	        return helper(nums, 0, nums.length - 1);
 	    }
@@ -40,6 +36,61 @@ public class SortedArrayToBST {
 			
 			root.left = helperV2(nums, left, mid - 1);
 			root.right = helperV2(nums, mid+1, right);
+			return root;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		public static void main(String[] args) {
+			
+			System.out.println(new SortedArrayToBST().sortedArrayToBSTV3(new int[] {-10, -3, 0, 5, 9}));
+//			System.out.println(0+(1-0)/2);
+		}
+		public TreeNode sortedArrayToBSTV3(int[] nums) {
+			
+			return helperMethod(nums,0,nums.length -1);
+	        
+	    }
+		public TreeNode helperMethod(int[] nums,int start,int end ) {
+			if(start>end)
+				return null;
+			int mid = end+((start-end)/2);
+			System.out.println(mid);
+			TreeNode root = new TreeNode(nums[mid]);
+			root.left = helperMethod(nums, start, mid - 1);
+			root.right = helperMethod(nums,mid+1,end);
 			return root;
 		}
 }

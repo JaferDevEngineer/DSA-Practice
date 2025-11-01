@@ -3,6 +3,7 @@ package DSA;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class Anagram {
 //	public static void main(String[] args) {
@@ -86,17 +87,6 @@ public class Anagram {
 		return true;
 	}
 
-	public static void main(String[] args) {
-		// Test cases
-//        System.out.println(isAnagramV2("anagram", "nagaram")); // true
-//        System.out.println(isAnagramV2("rat", "car"));         // false
-        System.out.println(isAnagramV4("a", "a"));             // true
-		System.out.println(isAnagramV4("abc", "def")); // false
-
-		System.out.println('a' - 'a');
-
-	}
-
 	private static boolean isAnagramV2(String t, String s) {
 		if (t.length() != s.length())
 			return false;
@@ -115,7 +105,7 @@ public class Anagram {
 		return true;
 	}
 
-	public static boolean isAnagramV3(String s, String t) {
+	public static boolean isAnagramV1(String s, String t) {
 
 		if (s.length() != t.length()) {
 			return false;
@@ -132,4 +122,61 @@ public class Anagram {
 		return true;
 	}
 
+	public static boolean anagram(String s, String t) { // "anagram", "nagaram"
+		Map<Character, Integer> map = new HashMap<>();
+
+		int sL = s.length() - 1, ss = 0, tL = t.length() - 1, ll = 0;
+		while (ss <= sL) {
+			map.put(s.charAt(ss), map.getOrDefault(s.charAt(ss), 0) + 1);
+			ss++;
+		}
+		System.out.println(map);
+		System.out.println();
+		while (ll <= tL) {
+			map.put(t.charAt(ll), map.getOrDefault(t.charAt(ll), 0) - 1);
+			ll++;
+
+		}
+		System.out.println(map); 
+
+		System.out.println();
+
+//		System.out.println(map);
+
+		for (Entry<Character, Integer> m : map.entrySet()) {
+			if (m.getValue() != 0)
+				return false;
+		}
+//		while
+
+		return true;
+	}
+	
+	public static boolean anagramV1(String s, String t) {
+		
+		if(s.length()!= t.length())
+			return false;
+		int[] arr = new int[26];
+		for(int i =0;i<s.length();i++) {
+			arr[s.charAt(i) - 'a']++;
+			arr[t.charAt(i) - 'a']--;
+			
+			
+		}
+		for(int i:arr) {
+			if(i!=0)
+				return false;
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+		// Test cases
+		System.out.println(anagramV1("anagram", "nagaram")); // true
+//        System.out.println(0-1);
+//        System.out.println(anagram("rat", "car"));         // false
+//		System.out.println(anagram("a", "a"));             // true
+//		System.out.println(isAnagramV4("abc", "def")); // false
+
+	}
 }

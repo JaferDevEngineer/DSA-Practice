@@ -1,6 +1,7 @@
 package DSA;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,14 +53,6 @@ public class ValidParantheses {
 		return stack.isEmpty();
 	}
 
-	public static void main(String[] args) {
-//		System.out.println(isValidV2("()")); // true
-//		System.out.println(isValidV2("()[]{}")); // true
-//		System.out.println(isValidV2("(]")); // false
-		
-		System.out.println(isValidV3("[([])]")); // true
-//		System.out.println(isValidV3("([])")); // true
-	}
 
 	private static boolean isValidV3(String string) {
 		
@@ -78,5 +71,58 @@ public class ValidParantheses {
 			}
 		}
 		return stack.isEmpty();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+//		System.out.println(isValidV2("()")); // true
+//		System.out.println(isValidV2("()[]{}")); // true
+//		System.out.println(isValidV2("(]")); // false
+		
+		System.out.println(validParanthese("]")); // true
+//		System.out.println(isValidV3("([])")); // true
+	}
+	
+	private static boolean validParanthese(String s) { // ()
+		Stack<Character> stack = new Stack<>();
+		char[] charArray = s.toCharArray();
+		for (char c : charArray) {
+			if (c == '{' || c == '[' || c == '(') {
+				stack.push(c);
+			} else {
+				if(stack.isEmpty())
+					return false;
+				char top = stack.pop();
+				System.out.println("c "+c+" top "+top);
+				if((c==')'&& top!='(') || (c==']'&& top!='[') || (c=='}'&& top!='{')) {
+					return false;
+				}
+			}
+		}
+		return stack.isEmpty();
+
 	}
 }

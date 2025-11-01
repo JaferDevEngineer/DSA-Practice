@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Rob {
 
 	public static void main(String[] args) {
-		System.out.println(new Rob().rob(new int[] { 2, 1, 1, 2 })); // 2,1,1,2
+		System.out.println(new Rob().rob2(new int[] { 1,2,3,1,4,5})); // 2,1,1,2
 //		System.out.println(5%2);
 	}
 
@@ -48,22 +48,22 @@ public class Rob {
 		return dp[size-1];
 	}
 
-	private int rob2(int[] nums) { // 2, 1, 1, 2 
+	private int rob2(int[] nums) { // 2, 1, 1, 2  // 1,2,3,1,4,5
 		int n = nums.length;
         if (n == 0) return 0;
         if (n == 1) return nums[0];
 
-        int prev2 = nums[0];
-        int prev1 = Math.max(nums[0], nums[1]);
+        int prev1 = nums[0];
+        int prev2 = Math.max(nums[0], nums[1]);
 
-        for (int i = 2; i < n; i++) { // p1 = 2,p2 = 2
-            int curr = Math.max(prev1, nums[i] + prev2); //cur =3
+        for (int i = 2; i < n; i++) { // 
+            int curr = Math.max(prev2, nums[i] + prev1); // (2,4) // (4,3) // (4,8) // (8,9)
             
-            prev2 = prev1; //p1=p2 == 2=2
-            prev1 = curr;  // p1 = cur = 3 
+            prev1 = prev2; // 2 // 4 // 4
+            prev2 = curr;  // 4 // 4 // 8
         }
 
-        return prev1;
+        return prev2;
     
 	}
 }

@@ -1,11 +1,7 @@
 package DSA;
 
 public class BinarySearch {
-	public static void main(String[] args) {
-		System.out.println(searchV2(new int[] {-1,0,3,5,9,12},0));
-		System.out.println(0 + (5 - 0) / 2);
-
-	}
+	
 
 	private static int searchV2(int[] arr, int i) {
 
@@ -40,4 +36,50 @@ public class BinarySearch {
 //
 //		return -1;
 //	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println(searchV3(new int[] { -1, 0, 3, 5, 9, 12 }, 0));
+//		System.out.println(0 + (5 - 0) / 2);
+		System.out.println(6/2);
+
+	}
+	
+	private static int searchV3(int[] arr, int target) { // -1, 0, 3, 5, 9, 12  //9
+		int low = 0, high = arr.length - 1;
+
+		while (low <= high) {
+			int mid = low+(high - low )/2;
+			if (arr[mid] == target)
+				return mid;
+			else if (arr[mid] > target ) {
+				high = mid -1;
+			}else if(arr[mid] < target) {
+				low = mid+1;
+			}
+			mid = high-low /2;
+		}
+
+		return -1;
+	}
 }

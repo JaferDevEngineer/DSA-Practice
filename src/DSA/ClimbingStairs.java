@@ -6,7 +6,7 @@ public class ClimbingStairs {
 		System.out.println(new ClimbingStairs().climbingStairs(4));
 	}
 
-	private int climbingStairs(int n) {
+	private int climbingStairs(int n) { //4 
 		 if (n <= 2) return n;
 
 	        int first = 1; // ways to reach step 1

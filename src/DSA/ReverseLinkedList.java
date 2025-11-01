@@ -4,7 +4,7 @@ public class ReverseLinkedList {
 	public static void main(String[] args) {
 		ListNode list = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
 		
-		System.out.println(reverseLinkedList(list));
+		System.out.println(reverseLinkedNodeList(list));
 	}
 
 	private static ListNode reverseLinkedList(ListNode list) {
@@ -19,8 +19,40 @@ public class ReverseLinkedList {
 		return reversedList;
 	}
 
-	public String reverseLinkedNodeList(ListNode listNode) {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static ListNode reverseLinkedNodeList(ListNode listNode) {
+		ListNode reversedList = null;
 		
-		return null;
+		while(listNode!=null) {
+			ListNode temp = reversedList;
+			reversedList = new ListNode(listNode.val);
+			reversedList.next = temp;
+			
+			listNode = listNode.next;
+		}
+		return reversedList;
 	}
 }
