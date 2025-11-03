@@ -19,7 +19,7 @@ public class DiameterOfTree {
 //		return new int[];
 //	}
 	
-	   int diameter = 0;
+	  static int diameter = 0;
 
 
 	    public  int diameterOfBinaryTree(TreeNode root) {

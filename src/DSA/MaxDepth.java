@@ -48,7 +48,7 @@ public class MaxDepth {
 //   9  20 
 //      / \
 //     15  7
-	public int maxDepthV2(TreeNode node) {//3,9,20,null,null,15,7
+	public static int maxDepthV2(TreeNode node) {//3,9,20,null,null,15,7
 		if(node == null)
 			return 0;
 		
