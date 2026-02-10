@@ -15,8 +15,9 @@ public class findMissingNumber {
 
 	private static int findMissingNumber(int[] arr) {
 		int length = arr.length;
-		if(length==0) return 0;
+		if(length == 0) return 0;
 		int total = length * (length + 1) / 2;
+//		System.out.println("total "+total);
 		for (int n : arr) {
 			total -= n;
 		}

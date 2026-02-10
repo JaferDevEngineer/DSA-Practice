@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class GroupAnagrams {
 	public static void main(String[] args) {
-		System.out.println(new GroupAnagrams().groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" }));
+		System.out.println(new GroupAnagrams().groupAnagramsV2(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" }));
 	}
 
 	private List<List<String>> groupAnagrams(String[] strs) {
@@ -24,4 +24,43 @@ public class GroupAnagrams {
 		}
 		return new ArrayList<>(map.values());
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 public List<List<String>> groupAnagramsV2(String[] strs) {
+		 Map<String,List<String>> map = new HashMap<>();
+		 for(String s:strs) {
+			 char[] chars = s.toCharArray();
+			 Arrays.sort(chars);
+			 String word = new String(chars);
+
+			 if(!map.containsKey(word))
+				 map.put(word, new ArrayList<>());
+			 map.get(word).add(s);
+		 }
+		return new ArrayList<>(map.values());
+	        
+	    }
 }

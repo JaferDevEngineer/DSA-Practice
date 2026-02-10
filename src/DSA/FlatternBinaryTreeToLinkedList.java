@@ -9,7 +9,8 @@ public class FlatternBinaryTreeToLinkedList {
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)),
 				new TreeNode(5, null, new TreeNode(6)));
-		new FlatternBinaryTreeToLinkedList().flattenV2(root);
+		new FlatternBinaryTreeToLinkedList().flattenV3(root);
+		
 //		new FlatternBinaryTreeToLinkedList().printTree(root);
 		
 		
@@ -90,7 +91,7 @@ public class FlatternBinaryTreeToLinkedList {
 	        printTree(root.right, prefix + (isLeft ? "│   " : "    "), false);
 	    }
 	}
-	public void printInOrder(TreeNode root) {
+	public static void printInOrder(TreeNode root) {
 	    if (root == null) return;
 	    printInOrder(root.left);
 	    System.out.print(root.val + " ");
@@ -163,5 +164,56 @@ public class FlatternBinaryTreeToLinkedList {
 	    if (root == null) return 0;
 	    return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 public void flattenV3(TreeNode root) {
+		 printTree(root);
+		 TreeNode curr = root;
+		 while(curr != null) {
+			 if(curr.left!=null) {
+			 TreeNode left = curr.left;
+			 while(left.right!=null) {
+				 left = left.right;
+			 }
+			 left.right = curr.right;
+//			 printTree(root);
+			 curr.right = curr.left;
+			 curr.left =null;
+			 
+			 }
+//			 printTree(root);
+//			 break;
+			 curr = curr.right;
+		 }
+		 printTree(root);
+	 }
 
 }

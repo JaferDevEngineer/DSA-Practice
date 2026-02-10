@@ -5,13 +5,12 @@ import java.util.Map;
 
 public class MaxSubArray {
 
-
-	private int maxSubArray(int[] nums) {//-2,1,-3,4,-1,2,1,-5,4
+	private int maxSubArray(int[] nums) {// -2,1,-3,4,-1,2,1,-5,4
 		int maxSum = nums[0]; // stores the global maximum sum
 		int currentSum = nums[0]; // stores the local maximum sum ending at current index
 
 		for (int i = 1; i < nums.length; i++) {
-			currentSum = Math.max(nums[i], currentSum + nums[i]); //-2+1 = -1, 1-3 = -2, 4-1 = 3,
+			currentSum = Math.max(nums[i], currentSum + nums[i]); // -2+1 = -1, 1-3 = -2, 4-1 = 3,
 			maxSum = Math.max(maxSum, currentSum);
 		}
 
@@ -31,23 +30,20 @@ public class MaxSubArray {
 
 	}
 
-	
-	
 	public static void main(String[] args) {
 		System.out.println(new MaxSubArray().maxSubArrayV3(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
-		System.out.println(new MaxSubArray().maxSubArrayV3(new int[] { 5, 4, -1, 7, 8 }));
+//		System.out.println(new MaxSubArray().maxSubArrayV3(new int[] { 5, 4, -1, 7, 8 }));
 	}
-	
-	
-	
+
 	
 	
 	private int maxSubArrayV3(int[] nums) {
-		int maxSum =nums[0],currentSum = maxSum;
-		for(int i = 1;i<nums.length;i++) {
-			currentSum = Math.max(nums[i], currentSum + nums[i]);
-			maxSum = Math.max(maxSum, currentSum);
-		}	
+		int sum = nums[0], maxSum = sum;
+
+		for (int i = 1; i < nums.length; i++) { 
+			sum = Math.max(nums[i]+sum, nums[i]);
+			maxSum = Math.max(maxSum, sum);
+		}
 		return maxSum;
 	}
 }

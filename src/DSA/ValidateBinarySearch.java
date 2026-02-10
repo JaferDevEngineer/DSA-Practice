@@ -100,7 +100,7 @@ public class ValidateBinarySearch {
 
 	private boolean validateCheck(TreeNode root, int minValue, int maxValue) {
 		if(root == null) return true;
-		if()
+//		if()
 		return false;
 	}
 	

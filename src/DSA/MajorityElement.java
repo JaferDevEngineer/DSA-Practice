@@ -15,6 +15,7 @@ public class MajorityElement {
 		for(int i :nums) {
 			map.put(i, map.getOrDefault(i, 0)+1);
 		}
+		System.out.println(map);
 		int maxValue = 0,highestNumber = 0;
 		for(int j:map.keySet()) {
 			if(maxValue < map.get(j)) {
@@ -24,7 +25,7 @@ public class MajorityElement {
 			}
 			
 		}
-		System.out.println(maxValue);
+//		System.out.println(maxValue);
 		return highestNumber;
 	}
 	

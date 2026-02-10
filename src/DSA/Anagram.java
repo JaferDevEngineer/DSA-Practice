@@ -100,7 +100,7 @@ public class Anagram {
 		for (int c : character) {
 			if (c != 0) {
 				return false;
-			}
+			}	
 		}
 		return true;
 	}

@@ -3,7 +3,7 @@ package DSA;
 //1.
 
 public class GreaterOnRightSide {
-	static void nextGreatest(int arr[], int n) {
+	static void nextGreatest(int arr[], int n) { // 16, 17, 4, 3, 5, 2 
 		int max = -1, temp = 0;
 		for (int i = n - 1; i >= 0; i--) {
 			temp = arr[i];

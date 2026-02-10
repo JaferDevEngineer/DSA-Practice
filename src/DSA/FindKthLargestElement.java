@@ -11,6 +11,17 @@ public class FindKthLargestElement {
 	 */
 	public static void main(String[] args) {
 		System.out.println(new FindKthLargestElement().findKthLargestElement(new int[] {3,2,1,5,6,4},2));
+//		PriorityQueue<Integer> queue = new PriorityQueue<>();
+//		queue.add(10);
+//		queue.add(20);
+//		queue.add(30);
+//		queue.add(2);
+//		System.out.println(queue);
+//		System.out.println(queue.poll());
+//		System.out.println(queue.poll());
+//		System.out.println(queue.poll());
+//		System.out.println(queue.poll());
+		
 	}
 
 	private int findKthLargestElement(int[] nums, int target) {
