@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ReverseString {
 	public static void main(String[] args) {
 		char[] s = { 'h', 'e', 'l', 'l', 'o' };
-		reverseStringV2(s);
+		reverseStringV3(s);
 		System.out.println(s);
 
 	}
@@ -24,8 +24,47 @@ public class ReverseString {
 
 	private static void reverseStringV2(char[] s) {
 
-		int low = 0,high = s.length -1;
-		while(low<=high) {
+		int low = 0, high = s.length - 1;
+		while (low <= high) {
+			char temp = s[low];
+			s[low] = s[high];
+			s[high] = temp;
+			low++;
+			high--;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	private static void reverseStringV3(char[] s) {
+		int low = 0, high = s.length - 1;
+
+		while (low <= high) {
 			char temp = s[low];
 			s[low] = s[high];
 			s[high] = temp;

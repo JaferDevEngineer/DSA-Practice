@@ -4,10 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MaxSubArray {
-	public static void main(String[] args) {
-//		System.out.println(new MaxSubArray().maxSubArrayV2(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
-		System.out.println(new MaxSubArray().maxSubArrayV2(new int[] {5,4,-1,7,8}));
-	}
+	
 
 	private int maxSubArray(int[] nums) {
 		int maxSum = nums[0]; // stores the global maximum sum
@@ -33,5 +30,45 @@ public class MaxSubArray {
 		}
 		return max;
 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+//		System.out.println(new MaxSubArray().maxSubArrayV2(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+		System.out.println(new MaxSubArray().maxSubArrayV3(new int[] {5,4,-1,7,8}));
+	}
+	private int maxSubArrayV3(int[] nums) {//-2,1,-3,4,-1,2,1,-5,4
+		int value = nums[0];
+		for(int num = 1;nums.length - 1; i++) {
+			value = Math.max(nums[i], value + nums[i]);
+		}
 	}
 }

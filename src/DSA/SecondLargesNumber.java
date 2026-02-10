@@ -23,44 +23,62 @@ public class SecondLargesNumber {
 
 	}
 
-	public static void main(String[] args) {
-		int arr1[] = { 4, 6, 5, 1, 2 };
-		System.out.println(secondLargestNumberV2(arr1));
+//	public static void main(String[] args) {
+//		int arr1[] = { 4, 6, 5, 1, 2 };
+//		System.out.println(secondLargestNumberV2(arr1));
+//
+//		int arr2[] = {};
+//		System.out.println(secondLargestNumberV2(arr2));
+//		
+//		int arr3[] = {5,5,5};
+//		System.out.println(secondLargestNumberV2(arr3));
+//		
+//		int arr4[] = {5,5,4};
+//		System.out.println(secondLargestNumberV2(arr4));
+//		
+//		int arr5[] = {-2,-3,10,10};
+//		System.out.println(secondLargestNumberV2(arr5));
+//
+//		int arr6[] = {-1,-1,-1};
+//		System.out.println(secondLargestNumberV2(arr6));
+//
+//	}
 
-		int arr2[] = {};
-		System.out.println(secondLargestNumberV2(arr2));
-		
-		int arr3[] = {5,5,5};
-		System.out.println(secondLargestNumberV2(arr3));
-		
-		int arr4[] = {5,5,4};
-		System.out.println(secondLargestNumberV2(arr4));
-		
-		int arr5[] = {-2,-3,10,10};
-		System.out.println(secondLargestNumberV2(arr5));
+//	private static int secondLargestNumberV2(int[] nums) {
+//
+//		if (nums.length <= 1)
+//			return -1;
+//		int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
+////-1,-1,-1
+//		for (int num : nums) {
+//			if (max < num) {
+//				secondMax = max;
+//				max = num;
+//			} else if (secondMax < num && num!=max) {
+//				secondMax = num;
+//			}
+//		}
+//		
+//		if(secondMax == Integer.MIN_VALUE)
+//			return max;
+//		return secondMax;
+//	}
+	
+	 public static void main(String[] args) {
+	        int[] arr = {10, 20, 4, 20, 5};
 
-		int arr6[] = {-1,-1,-1};
-		System.out.println(secondLargestNumberV2(arr6));
+	        Integer largest = null;
+	        Integer second = null;
 
-	}
+	        for (int n : arr) {
+	            if (largest == null || n > largest) {
+	                second = largest;
+	                largest = n;
+	            } else if (n != largest && (second == null || n > second)) {
+	                second = n;
+	            }
+	        }
 
-	private static int secondLargestNumberV2(int[] nums) {
-
-		if (nums.length <= 1)
-			return -1;
-		int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
-//-1,-1,-1
-		for (int num : nums) {
-			if (max < num) {
-				secondMax = max;
-				max = num;
-			} else if (secondMax < num && num!=max) {
-				secondMax = num;
-			}
-		}
-		
-		if(secondMax == Integer.MIN_VALUE)
-			return max;
-		return secondMax;
-	}
+	        System.out.println("Second Largest: " + second);
+	    }
 }

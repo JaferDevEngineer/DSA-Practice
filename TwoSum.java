@@ -31,7 +31,7 @@ public class TwoSum {
 		// Example 1
         int[] nums1 = {2, 7, 11, 15};
         int target1 = 9;
-        int[] result1 = twoSumV3(nums1, target1);
+        int[] result1 = twoSum(nums1, target1);
         System.out.println("Output: [" + result1[0] + ", " + result1[1] + "]");
 
 //        // Example 2
@@ -46,6 +46,18 @@ public class TwoSum {
 //        int[] result3 = twoSum(nums3, target3);
 //        System.out.println("Output: [" + result3[0] + ", " + result3[1] + "]");
 	}
+	public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0; i<nums.length - 1; i++){
+            int value = nums[i] - target;
+            if(map.containsKey(value)){
+                return new int[] {map.get(value),nums[i]};
+            }
+
+            map.put(nums[i],i);
+        }
+        return new int[] {};
+    }
 
 	public static int[] twoSumV2(int[] nums, int target) {
 

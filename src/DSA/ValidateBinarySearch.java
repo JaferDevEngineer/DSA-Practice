@@ -44,7 +44,6 @@ public class ValidateBinarySearch {
 
 	private boolean validate(TreeNode node, long min, long max) { // 6 , 5, max // 
 	    if (node == null) return true;
-	    System.out.println("node "+node.val);
 
 	    if (node.val <= min || node.val >= max) return false;
 
@@ -73,5 +72,38 @@ public class ValidateBinarySearch {
 
 		return validateBinarySearch(root.left,head) && validateBinarySearch(root.right,head) ;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private boolean validateBinarySearchV2(TreeNode root) {
+		return validateCheck(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+	}
+
+	private boolean validateCheck(TreeNode root, int minValue, int maxValue) {
+		if(root == null) return true;
+//		if()
+		return false;
+	}
+	
+	
 
 }

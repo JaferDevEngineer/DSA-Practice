@@ -12,7 +12,7 @@ public class MaxProfit2 {
 		int profit = 0;
 		for(int i=1;i<nums.length;i++) {
 			if(nums[i] > nums[i-1]) {
-				profit+=nums[i] - nums[i-1];
+				profit+=nums[i] - nums[i-1]; // profit= profit + nums[i] - nums[i-1];
 			}
 		}
 		return profit;

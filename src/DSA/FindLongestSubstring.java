@@ -16,11 +16,14 @@ public class FindLongestSubstring {
 		int[] arr = new int[256];
 		for (int i = 0; i < s.length(); i++) {
 			char current = s.charAt(i);
+			System.out.println("current "+(int)current+" "+arr[current]);
 			if (arr[current] > start) {
 				start = arr[current];
+				System.out.println(start);
 			}
 			arr[current] = i + 1;
 			max = Math.max(max, i + 1 - start);
+			System.out.println();
 
 		}
 

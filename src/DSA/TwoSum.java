@@ -4,34 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
-	public static int[] twoSum(int[] nums, int target) {
-		// Create a HashMap to store the number and its index
-		HashMap<Integer, Integer> map = new HashMap<>();
-
-		// Iterate through the array
-		for (int i = 0; i < nums.length; i++) {
-			int complement = target - nums[i]; // Calculate complement
-			System.out.println("complement " + complement);
-			// Check if the complement is already in the map
-			if (map.containsKey(complement)) {
-				return new int[] { map.get(complement), i }; // Return indices
-			}
-
-			System.out.println("nums[i] " + nums[i] + " i " + i);
-			// Store the current number and its index in the map
-			map.put(nums[i], i);
-		}
-
-		// If no solution is found (not needed, as input guarantees one solution)
-		
-		throw new IllegalArgumentException("No two sum solution");
-	}
 
 	public static void main(String[] args) {
 		// Example 1
-        int[] nums1 = {2, 7, 11, 15};
-        int target1 = 9;
-        int[] result1 = twoSumV3(nums1, target1);
+//        int[] nums1 = {2, 7, 11, 15};
+//        int target1 = 9;
+        int[] nums1 = {3,2,4};
+        int target1 = 6;
+        int[] result1 = twoSum(nums1, target1);
         System.out.println("Output: [" + result1[0] + ", " + result1[1] + "]");
 
 //        // Example 2
@@ -61,8 +41,21 @@ public class TwoSum {
 		}
 		return null;
 	}
+	public static int[] twoSum(int[] nums, int target) { //3,2,4 // 6
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0; i<nums.length ; i++){
+            int value =target - nums[i];
+            System.out.println(value+ " "+i+ " "+map) ;
+            if(map.containsKey(value)){
+                return new int[] {map.get(value),i};
+            }
 
-	public static int[] twoSumV3(int[] nums, int target) {
+            map.put(nums[i],i);
+        }
+        return new int[] {};
+    }
+
+	public static int[] twoSumV3(int[] nums, int target) { //3,2,4 // 6
 
 		Map<Integer, Integer> map = new HashMap<>();
 
